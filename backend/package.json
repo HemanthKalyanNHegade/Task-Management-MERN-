@@ -4,7 +4,9 @@
   "description": "Manage user day-to-day tasks",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "index.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +22,6 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.1.4"
   }
 }
