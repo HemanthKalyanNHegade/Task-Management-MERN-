@@ -38,13 +38,21 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="d-flex">
-            <Link className="btn btn-outline-success mx-2" to="/login">
-              Login
-            </Link>
-            <Link className="btn btn-success" to="/register">
-              Register
-            </Link>
-          </div>
+              <Link
+                className="btn btn-outline-success mx-2 d-none d-md-inline-block"
+                to="/login"
+                style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
+              >
+                Login
+              </Link>
+              <Link
+                className="btn btn-success d-none d-md-inline-block"
+                to="/register"
+                style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
+              >
+                Register
+              </Link>
+            </div>
         )}
       </div>
     </nav>
