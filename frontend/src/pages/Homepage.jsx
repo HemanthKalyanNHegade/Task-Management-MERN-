@@ -90,20 +90,11 @@ const Homepage = () => {
   useEffect(() => {
     getTasks();
   }, []);
+
   return (
     <div className="main-container">
       {loading ? (
-        <div
-          style={{
-            position: "absolute",
-            width: "80vw",
-            height: "92vh",
-            alignItems: "center",
-            justifyContent: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <div className="loader-container">
           <Loader />
         </div>
       ) : (
@@ -125,26 +116,9 @@ const Homepage = () => {
           >
             Launch demo modal
           </button>
-          <div
-            style={{
-              display: "flex",
-              width: "80vw",
-              flexDirection: "row",
-              flexWrap: "wrap",
-            }}
-          >
+          <div className="tasks-container">
             {data?.length === 0 ? (
-              <div
-                style={{
-                  position: "absolute",
-                  width: "80vw",
-                  height: "92vh",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
+              <div className="no-tasks-container">
                 <h1 style={{ textAlign: "center" }}>No tasks found!</h1>
               </div>
             ) : (
@@ -163,7 +137,7 @@ const Homepage = () => {
                 ))
             )}
           </div>
-          <div style={{ position: "absolute", bottom: 50, right: 50 }}>
+          <div className="create-task-button">
             <button
               className="btn btn-primary"
               onClick={() => {
