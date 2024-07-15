@@ -46,7 +46,7 @@ const Register = () => {
 
   return (
     <div className="login-container">
-      <div className="card" style={{ width: "30vw" }}>
+      <div className="card">
         <div className="card-body">
           <h3 style={{ width: "100%", textAlign: "center" }}>Register</h3>
           <div>
@@ -94,26 +94,12 @@ const Register = () => {
                 onChange={handleChange}
               />
             </div>
-            <button
-              className="btn btn-success"
-              style={{ width: "100%" }}
-              onClick={handleSubmit}
-            >
+            <button className="btn btn-success" onClick={handleSubmit}>
               Register
             </button>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-              alignContent: "center",
-              marginTop: "10px",
-            }}
-          >
-            <span>Already registered?</span> &nbsp;
+          <div className="footer-link-container">
+            <span>Already registered?</span>
             <Link to="/login">Click here</Link>
           </div>
         </div>
