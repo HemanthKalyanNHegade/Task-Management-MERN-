@@ -1,4 +1,4 @@
-.main-container{
+/* .main-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,4 +6,83 @@
     width: 100vw;
     background-color: #f5f5f5;
     overflow: scroll;
-}
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main container */
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Loader and no-tasks container */
+  .loader-container,
+  .no-tasks-container {
+    position: absolute;
+    width: 80vw;
+    height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  /* Tasks container */
+  .tasks-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80vw;
+  }
+  
+  /* Create Task button */
+  .create-task-button {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+  }
+  
+  @media (max-width: 768px) {
+    /* For tablets and smaller devices */
+    .main-container {
+      padding: 10px;
+    }
+  
+    .loader-container,
+    .no-tasks-container,
+    .tasks-container {
+      width: 90vw;
+    }
+  
+    .create-task-button {
+      bottom: 30px;
+      right: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* For mobile devices */
+    .main-container {
+      padding: 5px;
+    }
+  
+    .loader-container,
+    .no-tasks-container,
+    .tasks-container {
+      width: 100vw;
+    }
+  
+    .create-task-button {
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+  
