@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <form className="d-flex" role="search">
               <input
-                className="form-control me-2"
+                className="form-control me-2 mt-3"
                 type="search"
                 placeholder="Search here..."
                 aria-label="Search"
@@ -30,29 +30,50 @@ const Navbar = () => {
           </div>
         )}
         {username.length > 0 && authorizationToken ? (
-          <div className="d-flex">
-            <button className="btn btn-danger mx-2" onClick={logout}>
-              Logout
-            </button>
-            <button className="btn btn-outline-success">{username}</button>
-          </div>
+          <>
+            <div className="d-none d-lg-flex">
+              <button
+                className="btn btn-danger mx-2"
+                onClick={logout}
+                style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
+              >
+                Logout
+              </button>
+              <button
+                className="btn btn-outline-success"
+                style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
+              >
+                {username}
+              </button>
+            </div>
+
+            <div className="d-lg-none mt-0.5">
+              <button
+                className="btn btn-danger"
+                onClick={logout}
+                style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
+              >
+                Logout
+              </button>
+            </div>
+          </>
         ) : (
           <div className="d-flex">
-              <Link
-                className="btn btn-outline-success mx-2 d-none d-md-inline-block"
-                to="/login"
-                style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
-              >
-                Login
-              </Link>
-              <Link
-                className="btn btn-success d-none d-md-inline-block"
-                to="/register"
-                style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
-              >
-                Register
-              </Link>
-            </div>
+            <Link
+              className="btn btn-outline-success mx-2 d-none d-md-inline-block"
+              to="/login"
+              style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
+            >
+              Login
+            </Link>
+            <Link
+              className="btn btn-success d-none d-md-inline-block"
+              to="/register"
+              style={{ width: "100%", maxWidth: "120px", minWidth: "80px" }}
+            >
+              Register
+            </Link>
+          </div>
         )}
       </div>
     </nav>
