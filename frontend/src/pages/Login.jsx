@@ -1,30 +1,30 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import "../styles/Login.css";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 
 const Login = () => {
-    const {login} = useContext(AuthContext);
-    const [credentials, setCredentials] = useState({
-        username: "",
-        password: ""
-    })
+  const { login } = useContext(AuthContext);
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+  });
 
-    const handleChange = (e) => {
-        setCredentials({
-            ...credentials,
-            [e.target.name]: e.target.value
-        })
-    }
+  const handleChange = (e) => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        login(e, credentials.username, credentials.password);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(e, credentials.username, credentials.password);
+  };
 
   return (
     <div className="login-container">
-      <div className="card" style={{ width: "30vw" }}>
+      <div className="card">
         <div className="card-body">
           <h3 style={{ width: "100%", textAlign: "center" }}>Login</h3>
           <div>
@@ -37,7 +37,6 @@ const Login = () => {
                 className="form-control"
                 id="username"
                 name="username"
-                aria-describedby="emailHelp"
                 placeholder="Enter username"
                 value={credentials.username}
                 onChange={handleChange}
@@ -57,25 +56,13 @@ const Login = () => {
                 onChange={handleChange}
               />
             </div>
-            <button className="btn btn-success" style={{ width: "100%" }} onClick={handleSubmit}>
+            <button className="btn btn-success" onClick={handleSubmit}>
               Login
             </button>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-              alignContent: "center",
-              marginTop: "10px",
-            }}
-          >
-            <span>Not yet registered?</span> &nbsp;
-            <Link to="/register">
-              Click here
-            </Link>
+          <div className="footer-link-container">
+            <span>Not yet registered?</span>
+            <Link to="/register">Click here</Link>
           </div>
         </div>
       </div>
