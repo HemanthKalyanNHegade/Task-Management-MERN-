@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://task-management-backend-2-3f0z.onrender.com";
 const LOGIN = `${BASE_URL}/api/users/login`;
 const REGISTER = `${BASE_URL}/api/users/register`;
 const AUTH = `${BASE_URL}/api/auth/`;
